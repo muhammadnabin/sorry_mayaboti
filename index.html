@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Mayaboti - Our Eternal Love Story 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Satisfy&family=Great+Vibes&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --baby-pink: #FFE4E1;
+            --soft-pink: #FFC0CB;
+            --rose-pink: #FFB6C1;
+            --hot-pink: #FF69B4;
+            --deep-pink: #FF1493;
+            --cyan: #E0FFFF;
+            --light-cyan: #B0E0E6;
+            --cream: #FFF5EE;
+            --blush: #FFE0EC;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, #FFE4E1 0%, #FFC0CB 25%, #FFB6C1 50%, #FFE0EC 75%, #FFF5EE 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><path fill="%23FF69B4" d="M20 10 L25 20 L35 20 L27 27 L30 37 L20 30 L10 37 L13 27 L5 20 L15 20 Z" filter="url(%23glow)" opacity="0.9"/></svg>'), auto;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 192, 203, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 228, 225, 0.3) 0%, transparent 50%);
+            animation: floatBackground 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatBackground {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-20px, -20px) rotate(1deg); }
+            66% { transform: translate(20px, -10px) rotate(-1deg); }
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #FFE4E1, #FFC0CB, #FFB6C1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            transition: opacity 1.5s, visibility 1.5s;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loading-heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            animation: heartPulse 1.5s ease-in-out infinite;
+        }
+
+        .advanced-heart {
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+        }
+
+        @keyframes heartPulse {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            75% { transform: scale(1.3) rotate(-3deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .loading-text {
+            margin-top: 50px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            color: #FF1493;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+            animation: loadingTextGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes loadingTextGlow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 25px;
+            animation: floatHeart 15s infinite linear;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.6));
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+                transform: translateY(90vh) translateX(-30px) rotate(45deg) scale(1);
+            }
+            50% {
+                transform: translateY(50vh) translateX(30px) rotate(180deg) scale(1.2);
+            }
+            90% {
+                opacity: 0.7;
+                transform: translateY(10vh) translateX(-20px) rotate(360deg) scale(0.8);
+            }
+            100% {
+                transform: translateY(-100px) translateX(10px) rotate(400deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            animation: sparkleAnimation 1.5s linear forwards;
+            z-index: 9999;
+            font-size: 20px;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .main-container {
+            position: relative;
+            z-index: 10;
+            padding-top: 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.95), rgba(255, 192, 203, 0.95));
+            backdrop-filter: blur(20px);
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            animation: rotateGradient 15s linear infinite;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .main-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5em, 5vw, 4.5em);
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #FF1493);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shineText 3s linear infinite;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(255, 20, 147, 0.3));
+        }
+
+        @keyframes shineText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.2em, 3vw, 1.8em);
+            color: #FF69B4;
+            opacity: 0.9;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        .love-quote-ribbon {
+            position: fixed;
+            top: 100px;
+            right: -300px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.95), rgba(255, 192, 203, 0.95));
+            padding: 15px 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+            color: #FF1493;
+            z-index: 100;
+            animation: slideInQuote 20s infinite;
+            backdrop-filter: blur(10px);
+            max-width: 350px;
+        }
+
+        @keyframes slideInQuote {
+            0%, 100% { right: -400px; opacity: 0; }
+            10%, 90% { right: 20px; opacity: 1; }
+        }
+
+        .countdown-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .countdown-card {
+            background: linear-gradient(145deg, rgba(255, 228, 225, 0.9), rgba(255, 224, 236, 0.9));
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 40px rgba(255, 105, 180, 0.2),
+                inset 0 2px 10px rgba(255, 255, 255, 0.5);
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 300px;
+        }
+
+        .countdown-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1, #FF1493, #FFC0CB);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .countdown-card:hover::before {
+            opacity: 1;
+            animation: borderAnimation 2s linear infinite;
+        }
+
+        @keyframes borderAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .countdown-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(255, 105, 180, 0.4);
+        }
+
+        .countdown-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8em;
+            color: #FF1493;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(255, 20, 147, 0.2);
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .time-block {
+            background: linear-gradient(135deg, #FFF5EE, #FFE4E1);
+            padding: 15px;
+            border-radius: 15px;
+            min-width: 70px;
+            text-align: center;
+            box-shadow: 
+                0 5px 15px rgba(255, 105, 180, 0.2),
+                inset 0 1px 3px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s;
+        }
+
+        .time-block:hover {
+            transform: scale(1.1) rotateY(10deg);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+        }
+
+        .time-number {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .time-label {
+            font-size: 0.8em;
+            color: #FF69B4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.8), rgba(255, 192, 203, 0.8));
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+        }
+
+        .nav-pill {
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #FF69B4, #FF1493);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2em;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .nav-pill::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+
+        .nav-pill:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .nav-pill:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.5);
+        }
+
+        .nav-pill:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .content-section {
+            display: none;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: sectionFadeIn 1s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes sectionFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .vintage-letter {
+            background: 
+                linear-gradient(135deg, #FFF5EE 0%, #FFE4E1 50%, #FFF5EE 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 28px,
+                    rgba(255, 182, 193, 0.1) 28px,
+                    rgba(255, 182, 193, 0.1) 29px
+                );
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 
+                0 30px 60px rgba(255, 105, 180, 0.2),
+                inset 0 0 120px rgba(255, 182, 193, 0.1);
+            position: relative;
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(2deg);
+            transition: all 0.3s;
+        }
+
+        .vintage-letter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 105, 180, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 182, 193, 0.05) 0%, transparent 50%);
+            animation: letterShimmer 20s linear infinite;
+        }
+
+        @keyframes letterShimmer {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            100% { transform: rotate(360deg) translate(50px, 50px); }
+        }
+
+        .vintage-letter:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.02);
+            box-shadow: 0 40px 80px rgba(255, 105, 180, 0.3);
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .letter-date {
+            font-family: 'Dancing Script', cursive;
+            color: #FF69B4;
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        .letter-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #FF1493;
+            margin: 20px 0;
+            text-shadow: 0 3px 6px rgba(255, 20, 147, 0.2);
+            animation: letterTitleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes letterTitleGlow {
+            0%, 100% { 
+                text-shadow: 0 3px 6px rgba(255, 20, 147, 0.2);
+            }
+            50% { 
+                text-shadow: 0 3px 20px rgba(255, 20, 147, 0.4);
+            }
+        }
+
+        .letter-content {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #5C4033;
+            text-align: justify;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-content p {
+            margin-bottom: 25px;
+            text-indent: 30px;
+            position: relative;
+            animation: paragraphFade 1s ease-out backwards;
+        }
+
+        .letter-content p:nth-child(1) { animation-delay: 0.1s; }
+        .letter-content p:nth-child(2) { animation-delay: 0.2s; }
+        .letter-content p:nth-child(3) { animation-delay: 0.3s; }
+        .letter-content p:nth-child(4) { animation-delay: 0.4s; }
+        .letter-content p:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes paragraphFade {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .letter-content p:first-child::first-letter {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            float: left;
+            line-height: 0.8;
+            margin: 10px 10px 0 0;
+            color: #FF1493;
+            text-shadow: 0 3px 6px rgba(255, 20, 147, 0.3);
+        }
+
+        .letter-signature {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: #FF1493;
+            position: relative;
+        }
+
+        .letter-signature::before,
+        .letter-signature::after {
+            content: '❤';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            animation: heartBeat 2s ease-in-out infinite;
+        }
+
+        .letter-signature::before {
+            left: -50px;
+        }
+
+        .letter-signature::after {
+            right: -50px;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.2); }
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 50px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #FF69B4, #FFB6C1, #FF1493);
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 50px 0;
+            opacity: 0;
+            animation: timelineItemFade 1s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.7s; }
+
+        @keyframes timelineItemFade {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.95), rgba(255, 224, 236, 0.95));
+            padding: 30px;
+            border-radius: 20px;
+            width: 45%;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            animation: slideFromRight 1s ease-out;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            animation: slideFromLeft 1s ease-out;
+        }
+
+        @keyframes slideFromRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.3);
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #FF1493, #FF69B4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.4);
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #FFF5EE, #FFE4E1);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(255, 105, 180, 0.4);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            padding: 20px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: #FF1493;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
+            position: relative;
+            z-index: 2;
+        }
+
+        .forgive-section {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .forgive-card {
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.95), rgba(255, 224, 236, 0.95));
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(255, 105, 180, 0.3);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .forgive-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 50%);
+            animation: forgiveGlow 10s linear infinite;
+        }
+
+        @keyframes forgiveGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .forgive-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            background: linear-gradient(45deg, #FF1493, #FF69B4, #FF1493);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shineText 3s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        .forgive-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: #5C4033;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .forgive-button {
+            padding: 25px 60px;
+            background: linear-gradient(135deg, #FF1493, #FF69B4, #FF1493);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.4);
+            animation: forgiveHeartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes forgiveHeartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            50% { transform: scale(1.02); }
+            75% { transform: scale(1.08); }
+        }
+
+        .forgive-button:hover {
+            animation: none;
+            transform: scale(1.1);
+            box-shadow: 0 30px 70px rgba(255, 20, 147, 0.5);
+            background-position: right center;
+        }
+
+        .celebration-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.95), rgba(255, 182, 193, 0.95));
+            z-index: 999999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .celebration-overlay.show {
+            display: flex;
+            animation: celebrationExplosion 4s ease-out;
+        }
+
+        @keyframes celebrationExplosion {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        .celebration-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: white;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+            animation: celebrationBounce 4s ease-out;
+        }
+
+        @keyframes celebrationBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-50px) rotate(-10deg); }
+            50% { transform: translateY(0) rotate(10deg); }
+            75% { transform: translateY(-25px) rotate(-5deg); }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.2em;
+            }
+
+            .countdown-card {
+                min-width: 100%;
+            }
+
+            .nav-container {
+                padding: 20px 15px;
+            }
+
+            .nav-pill {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            .vintage-letter {
+                padding: 30px;
+            }
+
+            .letter-title {
+                font-size: 2em;
+            }
+
+            .letter-content {
+                font-size: 1em;
+            }
+
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .timeline-date {
+                left: 30px;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .forgive-card {
+                padding: 40px 30px;
+            }
+
+            .forgive-title {
+                font-size: 2em;
+            }
+
+            .forgive-button {
+                padding: 20px 40px;
+                font-size: 1.5em;
+            }
+
+            .love-quote-ribbon {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2em;
+            }
+
+            .countdown-display {
+                gap: 10px;
+            }
+
+            .time-block {
+                min-width: 60px;
+                padding: 10px;
+            }
+
+            .time-number {
+                font-size: 1.5em;
+            }
+
+            .vintage-letter {
+                padding: 20px;
+            }
+
+            .letter-content p:first-child::first-letter {
+                font-size: 3em;
+            }
+
+            .nav-pill {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            font-size: 30px;
+            animation: confettiFall 5s linear;
+            pointer-events: none;
+            z-index: 999999;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sadday.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-heart-container">
+            <svg class="advanced-heart" width="200" height="200" viewBox="0 0 200 200">
+                <defs>
+                    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FF1493;stop-opacity:1">
+                            <animate attributeName="stop-color" values="#FF1493;#FF69B4;#FF1493" dur="2s" repeatCount="indefinite"/>
+                        </stop>
+                        <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1">
+                            <animate attributeName="stop-color" values="#FF69B4;#FFB6C1;#FF69B4" dur="2s" repeatCount="indefinite"/>
+                        </stop>
+                    </linearGradient>
+                    <filter id="glow">
+                        <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <path d="M100,170 C100,170 40,120 40,85 C40,60 60,40 85,40 C95,40 105,45 100,60 C95,45 105,40 115,40 C140,40 160,60 160,85 C160,120 100,170 100,170 Z" 
+                      fill="url(#heartGradient)" 
+                      filter="url(#glow)"
+                      stroke="#FF1493" 
+                      stroke-width="2">
+                    <animateTransform attributeName="transform"
+                                    type="scale"
+                                    values="1;1.2;1;1.3;1"
+                                    dur="1.5s"
+                                    repeatCount="indefinite"
+                                    additive="sum"/>
+                </path>
+                <circle cx="75" cy="65" r="3" fill="white" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="125" cy="65" r="3" fill="white" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+        <div class="loading-text">Loading Our Love Story...</div>
+    </div>
+
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <div class="love-quote-ribbon" id="loveQuote"></div>
+
+    <div class="main-container">
+        <div class="header-section">
+            <h1 class="main-title">💕 For My Beloved Mayaboti 💕</h1>
+            <p class="subtitle">Where Every Heartbeat Writes Our Eternal Love Story</p>
+        </div>
+
+        <div class="countdown-section">
+            <div class="countdown-card">
+                <h3 class="countdown-title">❤️ Since We First Met ❤️</h3>
+                <div class="countdown-display">
+                    <div class="time-block">
+                        <span class="time-number" id="meetYears">0</span>
+                        <span class="time-label">Years</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="meetDays">0</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="meetHours">0</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="meetMinutes">0</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="meetSeconds">0</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="countdown-card">
+                <h3 class="countdown-title">💔 Days Without You (Since 28 Oct 2025) 💔</h3>
+                <div class="countdown-display">
+                    <div class="time-block">
+                        <span class="time-number" id="breakupDays">0</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="breakupHours">0</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="breakupMinutes">0</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-number" id="breakupSeconds">0</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+                <p style="text-align: center; color: #FF1493; font-family: 'Dancing Script', cursive; margin-top: 20px; font-size: 1.2em;">
+                    Every second without you is pure pain 💔
+                </p>
+            </div>
+        </div>
+
+        <div class="nav-container">
+            <button class="nav-pill" onclick="showSection('letter')">💌 My Letter</button>
+            <button class="nav-pill" onclick="showSection('timeline')">⏰ Our Timeline</button>
+            <button class="nav-pill" onclick="showSection('gallery')">📸 Our Memories</button>
+            <button class="nav-pill" onclick="showSection('forgive')">💕 Please Forgive Me</button>
+        </div>
+
+        <div id="letter" class="content-section active">
+            <div class="letter-container">
+                <div class="vintage-letter">
+                    <div class="letter-header">
+                        <div class="letter-date">Written with tears and love</div>
+                        <h2 class="letter-title">My Dearest Mayaboti</h2>
+                    </div>
+                    <div class="letter-content">
+                        <p>My heart is breaking into million pieces as I write these words. Since 28th October 2025, my life has stopped. Every day without you feels like years. I can't sleep properly, can't eat properly, can't even breathe properly. Your memories are killing me slowly. I made the biggest mistake of my life by blocking you, by hurting you. I was stupid, I was wrong, and now I am suffering every single moment.</p>
+                        
+                        <p>Do you remember that beautiful day at Sony Cineplex on 23rd October 2022? That day changed my whole life. When I saw you first time, my heart stopped beating. Your smile, your eyes, your laugh - everything was so perfect. That moment I knew you are the one for me. You are my everything. Without you, I am nothing.</p>
+                        
+                        <p>When we started our relationship on 31st January 2024, I promised you everything. I promised to love you forever, to keep you happy, to never hurt you. But I broke all my promises. I hurt you so badly. I know sorry is a very small word for what I did. But please Mayaboti, please give me one more chance. I can't live without you anymore.</p>
+                        
+                        <p>These 41 days without you have been pure hell for me. Every morning I wake up and check my phone hoping to see your message. Every night I cry myself to sleep. I can't focus on anything. My life has no meaning without you. You are not just my girlfriend - you are my life, my soul, my everything. I need you like I need air to breathe.</p>
+                        
+                        <p>I am begging you Mayaboti, please forgive me. Please give me one last chance. I promise I will never hurt you again. I will love you more than before. I will make you the happiest girl in the world. Please don't leave me like this. I can't imagine my life without you. You are my past, my present, and my future. Please come back to me.</p>
+                    </div>
+                    <div class="letter-signature">
+                        Forever and Always Yours,<br>
+                        Nabin
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="timeline" class="content-section">
+            <h2 style="text-align: center; font-family: 'Great Vibes', cursive; color: #FF1493; font-size: 3em; margin-bottom: 50px;">
+                Our Beautiful Journey 💕
+            </h2>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">23 Oct 2022</div>
+                    <div class="timeline-content">
+                        <h3 style="color: #FF1493; font-family: 'Dancing Script', cursive; font-size: 1.8em;">
+                            ✨ When I First Saw You
+                        </h3>
+                        <p style="color: #5C4033; margin-top: 15px; line-height: 1.6;">
+                            Sony Cineplex - the day my life changed forever. Your smile stopped my heart. I knew that moment you are the one for me.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">31 Jan 2024</div>
+                    <div class="timeline-content">
+                        <h3 style="color: #FF1493; font-family: 'Dancing Script', cursive; font-size: 1.8em;">
+                            💑 We Started Our Journey
+                        </h3>
+                        <p style="color: #5C4033; margin-top: 15px; line-height: 1.6;">
+                            You said yes and made me the happiest person in the world. I promised to love you forever and keep you happy always.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">28 Oct 2025</div>
+                    <div class="timeline-content">
+                        <h3 style="color: #FF1493; font-family: 'Dancing Script', cursive; font-size: 1.8em;">
+                            💔 My Biggest Mistake
+                        </h3>
+                        <p style="color: #5C4033; margin-top: 15px; line-height: 1.6;">
+                            The day I lost you. I hurt you so badly. I blocked you. This is the worst decision of my life. I am sorry Mayaboti, so sorry.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Today</div>
+                    <div class="timeline-content">
+                        <h3 style="color: #FF1493; font-family: 'Dancing Script', cursive; font-size: 1.8em;">
+                            💕 Begging For One More Chance
+                        </h3>
+                        <p style="color: #5C4033; margin-top: 15px; line-height: 1.6;">
+                            I can't live without you anymore. Please forgive me. Please give me one last chance. I promise I will never hurt you again.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gallery" class="content-section">
+            <h2 style="text-align: center; font-family: 'Great Vibes', cursive; color: #FF1493; font-size: 3em; margin-bottom: 50px;">
+                Our Precious Memories 📸
+            </h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528480978763909/photo_2025-12-08_16-00-14.jpg?ex=6937f373&is=6936a1f3&hm=c227108e7e6ea08b66c5f74e44b79c0a7d3ebc1e6a7d339b6b99f3f0dfb8bc7b&=&format=webp&width=676&height=902" alt="First Meeting">
+                    <div class="gallery-caption">💕</div>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528481490735185/photo_2025-12-08_16-00-11.jpg?ex=6937f373&is=6936a1f3&hm=f4cd67080f1b8f1b88129bc5694a92ebd92729a2f113d3c49fb15b0b06576691&=&format=webp&width=676&height=902" alt="First Date">
+                    <div class="gallery-caption">✨</div>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528479804620810/photo_2025-12-08_16-00-21.jpg?ex=6937f373&is=6936a1f3&hm=6f5fb41688646881dc2d98483c84a6cb874c89c32f72b4af619ed17741b338e3&=&format=webp" alt="Happy Times">
+                    <div class="gallery-caption">😊</div>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://cdn.discordapp.com/attachments/811325993612607539/1447528480588955709/photo_2025-12-08_16-00-16.jpg?ex=6937f373&is=6936a1f3&hm=d626a80333d7c0798041fd1e2339a97129a3ed4f4f9ec1e1f451d0006426d6c8&" alt="Together">
+                    <div class="gallery-caption">💑</div>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528479347445820/photo_2025-12-08_16-00-23.jpg?ex=6937f373&is=6936a1f3&hm=f88218ed3b9011207af27d48c719dbf61918c1a8463f4b6129ecd3b07e65ef5b&=&format=webp&width=650&height=901" alt="Love">
+                    <div class="gallery-caption">💖</div>
+                </div>
+                <div class="gallery-item">
+                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528480173723648/photo_2025-12-08_16-00-19.jpg?ex=6937f373&is=6936a1f3&hm=6b8ecce66cec8cb2932260c41974a5533941ce24da11ed5e40ee92ad5e9bd8da&=&format=webp" alt="Forever">
+                    <div class="gallery-caption"> 💝</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="forgive" class="content-section">
+            <div class="forgive-section">
+                <div class="forgive-card">
+                    <h2 class="forgive-title">Mayaboti, Please Forgive Me 💔</h2>
+                    <p class="forgive-text">
+                        I know I hurt you very badly...<br>
+                        I know I made the biggest mistake of my life...<br>
+                        I know sorry is not enough for what I did...<br>
+                        But please Mayaboti, I can't live without you anymore...<br><br>
+                        These 41 days without you are killing me slowly.<br>
+                        Every second feels like years.<br>
+                        I cry every night thinking about you.<br>
+                        My heart is broken into million pieces.<br><br>
+                        If you can find it in your heart to forgive me...<br>
+                        If you believe our love deserves one more chance...<br>
+                        If you want to give me one last chance to prove my love...<br>
+                        Please click below, my beloved Mayaboti 💕
+                    </p>
+                    <button class="forgive-button" onclick="forgiveMe()">
+                        💕 Yes, I Forgive You - Let's Start Again 💕
+                    </button>
+                    <p style="text-align: center; color: #FF69B4; font-family: 'Dancing Script', cursive; margin-top: 30px; font-size: 1.3em;">
+                        I promise I will never hurt you again. I will love you more than ever. Please give me one chance 🙏
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="celebration-overlay" id="celebrationOverlay">
+        <h2 class="celebration-text">Thank You My Love! 💕</h2>
+        <p style="color: white; font-size: 2em; font-family: 'Dancing Script', cursive;">Our Love Story Starts Again Now!</p>
+    </div>
+
+    <script>
+        const TELEGRAM_BOT_TOKEN = '8280077034:AAGkYar33fDSWGMnqIetQ27PlywRNxeSkWQ';
+        const TELEGRAM_CHAT_ID = '1234567890';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 3000);
+
+            const audio = document.getElementById('bgMusic');
+            audio.volume = 0.3;
+            audio.play().catch(() => {
+                document.addEventListener('click', () => {
+                    audio.play();
+                }, { once: true });
+            });
+
+            createFloatingHearts();
+            startCountdowns();
+            addSparkleEffect();
+            showLoveQuotes();
+        });
+
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const hearts = ['💕', '❤️', '💖', '💝', '💗', '💓', '💞', '💘', '❣️', '💑'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart-float';
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 15000);
+            }, 2000);
+        }
+
+        function startCountdowns() {
+            const firstMeet = new Date('2022-10-23T00:00:00');
+            const breakupDate = new Date('2025-10-28T00:00:00');
+            
+            function updateCountdowns() {
+                const now = new Date();
+                
+                const meetDiff = now - firstMeet;
+                const meetYears = Math.floor(meetDiff / (1000 * 60 * 60 * 24 * 365));
+                const meetDays = Math.floor((meetDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+                const meetHours = Math.floor((meetDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const meetMinutes = Math.floor((meetDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const meetSeconds = Math.floor((meetDiff % (1000 * 60)) / 1000);
+                
+                document.getElementById('meetYears').textContent = meetYears;
+                document.getElementById('meetDays').textContent = meetDays;
+                document.getElementById('meetHours').textContent = meetHours;
+                document.getElementById('meetMinutes').textContent = meetMinutes;
+                document.getElementById('meetSeconds').textContent = meetSeconds;
+                
+                const breakupDiff = now - breakupDate;
+                const breakupDays = Math.floor(breakupDiff / (1000 * 60 * 60 * 24));
+                const breakupHours = Math.floor((breakupDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const breakupMinutes = Math.floor((breakupDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const breakupSeconds = Math.floor((breakupDiff % (1000 * 60)) / 1000);
+                
+                document.getElementById('breakupDays').textContent = breakupDays;
+                document.getElementById('breakupHours').textContent = breakupHours;
+                document.getElementById('breakupMinutes').textContent = breakupMinutes;
+                document.getElementById('breakupSeconds').textContent = breakupSeconds;
+            }
+            
+            updateCountdowns();
+            setInterval(updateCountdowns, 1000);
+        }
+
+        function addSparkleEffect() {
+            const sparkles = ['✨', '💫', '⭐', '🌟'];
+            
+            document.addEventListener('mousemove', (e) => {
+                if (Math.random() > 0.92) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.innerHTML = sparkles[Math.floor(Math.random() * sparkles.length)];
+                    sparkle.style.left = e.clientX + 'px';
+                    sparkle.style.top = e.clientY + 'px';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1500);
+                }
+            });
+        }
+
+        function showLoveQuotes() {
+            const quotes = [
+                "Mayaboti, I can't breathe without you 💔",
+                "Every heartbeat says your name, please come back 💕",
+                "I am nothing without you, please forgive me ❤️",
+                "These 41 days feel like 41 years without you 😢",
+                "You are my everything, I need you back 💑",
+                "I cry every night missing you so much 😭",
+                "My life has no meaning without you Mayaboti 💔",
+                "Please give me one more chance, I beg you 🙏",
+                "I promise I will never hurt you again 💕",
+                "You are my past, present and future ✨"
+            ];
+            
+            let currentQuoteIndex = 0;
+            const quoteElement = document.getElementById('loveQuote');
+            
+            function displayQuote() {
+                quoteElement.textContent = quotes[currentQuoteIndex];
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            }
+            
+            displayQuote();
+            setInterval(displayQuote, 15000);
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function forgiveMe() {
+            const celebration = document.getElementById('celebrationOverlay');
+            celebration.classList.add('show');
+            
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    createConfetti();
+                }, i * 50);
+            }
+            
+            const forgiveMessage = `
+🎉🎉🎉 *MAYABOTI FORGAVE YOU!* 🎉🎉🎉
+
+💕💕💕 *SHE CLICKED THE FORGIVE BUTTON!* 💕💕💕
+
+❤️ *Your Mayaboti has forgiven you!*
+🌟 *She is giving you one more chance!*
+💑 *Your relationship is starting again!*
+
+⏰ *Time:* ${new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' })}
+✨ *Status:* SHE FORGAVE YOU!
+🎊 *Message:* Don't waste this chance! Call her NOW!
+
+*This is your last chance Nabin. Don't hurt her again. Love her with all your heart. Make her happy forever. She trusted you again.*
+
+💌 *Quick! Talk to her now! She is waiting for you!*
+            `;
+            
+            try {
+                const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
+                const updatesResponse = await fetch(updatesUrl);
+                const updatesData = await updatesResponse.json();
+                
+                let chatId = TELEGRAM_CHAT_ID;
+                
+                if (updatesData.ok && updatesData.result.length > 0) {
+                    for (let i = updatesData.result.length - 1; i >= 0; i--) {
+                        if (updatesData.result[i].message && updatesData.result[i].message.chat) {
+                            chatId = updatesData.result[i].message.chat.id;
+                            break;
+                        }
+                    }
+                }
+                
+                const sendUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                await fetch(sendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: forgiveMessage,
+                        parse_mode: 'Markdown'
+                    })
+                });
+            } catch (error) {
+                console.log('Forgiveness notification:', forgiveMessage);
+            }
+            
+            setTimeout(() => {
+                celebration.classList.remove('show');
+                showFinalLoveMessage();
+            }, 4000);
+        }
+
+        function createConfetti() {
+            const confettiEmojis = ['💕', '❤️', '💖', '💝', '✨', '🌹', '💑', '💗', '💓', '🌟'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.innerHTML = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            confetti.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 5000);
+        }
+
+        function showFinalLoveMessage() {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: linear-gradient(135deg, #FF1493, #FF69B4);
+                color: white;
+                padding: 50px;
+                border-radius: 30px;
+                text-align: center;
+                z-index: 999999;
+                box-shadow: 0 30px 80px rgba(255, 20, 147, 0.6);
+                font-family: 'Dancing Script', cursive;
+                animation: fadeIn 1s ease-out;
+                max-width: 90%;
+            `;
+            messageDiv.innerHTML = `
+                <h2 style="font-size: 2.5em; margin-bottom: 20px; font-family: 'Great Vibes', cursive;">
+                    Thank You So Much Mayaboti! 💕
+                </h2>
+                <p style="font-size: 1.5em; margin-bottom: 20px;">
+                    You gave me one more chance and I am so grateful!
+                </p>
+                <p style="font-size: 1.3em;">
+                    I promise I will never hurt you again.<br>
+                    I will love you more than before.<br>
+                    I will keep you happy forever.<br>
+                    You are my everything Mayaboti!
+                </p>
+                <p style="margin-top: 30px; font-size: 1.8em; font-family: 'Great Vibes', cursive;">
+                    Forever yours, Nabin ❤️
+                </p>
+            `;
+            document.body.appendChild(messageDiv);
+            
+            setTimeout(() => {
+                messageDiv.style.animation = 'fadeOut 1s ease-out';
+                setTimeout(() => messageDiv.remove(), 1000);
+            }, 6000);
+        }
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const sections = ['letter', 'timeline', 'gallery', 'forgive'];
+            const currentSection = document.querySelector('.content-section.active').id;
+            const currentIndex = sections.indexOf(currentSection);
+            
+            if (touchEndX < touchStartX - 50 && currentIndex < sections.length - 1) {
+                showSection(sections[currentIndex + 1]);
+            }
+            
+            if (touchEndX > touchStartX + 50 && currentIndex > 0) {
+                showSection(sections[currentIndex - 1]);
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const sections = ['letter', 'timeline', 'gallery', 'forgive'];
+            const currentSection = document.querySelector('.content-section.active').id;
+            const currentIndex = sections.indexOf(currentSection);
+            
+            if (e.key === 'ArrowRight' && currentIndex < sections.length - 1) {
+                showSection(sections[currentIndex + 1]);
+            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                showSection(sections[currentIndex - 1]);
+            }
+        });
+
+        console.log('💕 Website loaded successfully for Mayaboti!');
+    </script>
+</body>
+</html>
