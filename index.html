@@ -382,6 +382,9 @@
             margin: 30px auto;
             max-width: 900px;
             box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            position: relative;
+            z-index: 20;
+            pointer-events: auto;
         }
 
         .nav-pill {
@@ -777,7 +780,7 @@
             max-width: 700px;
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .forgive-card::before {
@@ -789,7 +792,6 @@
             height: 300%;
             background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 50%);
             animation: forgiveGlow 10s linear infinite;
-            pointer-events: none;
         }
 
         @keyframes forgiveGlow {
@@ -860,11 +862,13 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            pointer-events: none;
         }
 
         .celebration-overlay.show {
             display: flex;
-            animation: celebrationExplosion 4s ease-out;
+            animation: celebrationExplosion 4s ease-out forwards;
+            pointer-events: auto;
         }
 
         @keyframes celebrationExplosion {
@@ -1043,8 +1047,13 @@
             resize: vertical;
             transition: all 0.3s;
             box-sizing: border-box;
-            cursor: text;
+            cursor: text !important;
             outline: none;
+            position: relative;
+            z-index: 10;
+            pointer-events: auto !important;
+            -webkit-appearance: textarea;
+            appearance: textarea;
         }
 
         #mayabotiMessage:focus {
@@ -1297,27 +1306,27 @@
             </h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://cdn.discordapp.com/attachments/811325993612607539/1447693573532291286/photo_2025-12-08_16-00-14.jpg?ex=69388d34&is=69373bb4&hm=9df79479628b651059243234c98783e239b4a7c5ae1e25ebfe575ef4fed6ee5b&" alt="First Meeting">
+                    <img class="gallery-image" src="images/photo1.jpg" alt="First Meeting">
                     <div class="gallery-caption">💕</div>
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528481490735185/photo_2025-12-08_16-00-11.jpg?ex=6937f373&is=6936a1f3&hm=f4cd67080f1b8f1b88129bc5694a92ebd92729a2f113d3c49fb15b0b06576691&=&format=webp&width=676&height=902" alt="First Date">
+                    <img class="gallery-image" src="images/photo2.jpg" alt="First Date">
                     <div class="gallery-caption">✨</div>
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528479804620810/photo_2025-12-08_16-00-21.jpg?ex=6937f373&is=6936a1f3&hm=6f5fb41688646881dc2d98483c84a6cb874c89c32f72b4af619ed17741b338e3&=&format=webp" alt="Happy Times">
+                    <img class="gallery-image" src="images/photo3.jpg" alt="Happy Times">
                     <div class="gallery-caption">😊</div>
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528480588955709/photo_2025-12-08_16-00-16.jpg?ex=6937f373&is=6936a1f3&hm=d626a80333d7c0798041fd1e2339a97129a3ed4f4f9ec1e1f451d0006426d6c8&=&format=webp&width=722&height=902" alt="Together">
+                    <img class="gallery-image" src="images/photo4.jpg" alt="Together">
                     <div class="gallery-caption">💑</div>
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528479347445820/photo_2025-12-08_16-00-23.jpg?ex=6937f373&is=6936a1f3&hm=f88218ed3b9011207af27d48c719dbf61918c1a8463f4b6129ecd3b07e65ef5b&=&format=webp&width=650&height=901" alt="Love">
+                    <img class="gallery-image" src="images/photo5.jpg" alt="Love">
                     <div class="gallery-caption">💖</div>
                 </div>
                 <div class="gallery-item">
-                    <img class="gallery-image" src="https://media.discordapp.net/attachments/811325993612607539/1447528480173723648/photo_2025-12-08_16-00-19.jpg?ex=6937f373&is=6936a1f3&hm=6b8ecce66cec8cb2932260c41974a5533941ce24da11ed5e40ee92ad5e9bd8da&=&format=webp" alt="Forever">
+                    <img class="gallery-image" src="images/photo6.jpg" alt="Forever">
                     <div class="gallery-caption">💝</div>
                 </div>
             </div>
@@ -1485,7 +1494,7 @@
                 "Mayaboti, I can't breathe without you 💔",
                 "Every heartbeat says your name, please come back 💕",
                 "I am nothing without you, please forgive me ❤️",
-                "These 41 days feel like 41 years without you 😢",
+                "These without you days feel like ♾️ years without you 😢",
                 "You are my everything, I need you back 💑",
                 "I cry every night missing you so much 😭",
                 "My life has no meaning without you Mayaboti 💔",
@@ -1872,13 +1881,17 @@
 
         let touchStartX = 0;
         let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
 
         document.addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
         });
 
         document.addEventListener('touchend', function(e) {
             touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
             handleSwipe();
         });
 
@@ -1887,12 +1900,19 @@
             const currentSection = document.querySelector('.content-section.active').id;
             const currentIndex = sections.indexOf(currentSection);
             
-            if (touchEndX < touchStartX - 50 && currentIndex < sections.length - 1) {
-                showSection(sections[currentIndex + 1]);
-            }
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
             
-            if (touchEndX > touchStartX + 50 && currentIndex > 0) {
-                showSection(sections[currentIndex - 1]);
+            // Only trigger swipe if horizontal movement is greater than vertical movement
+            // This prevents triggering during vertical scrolling
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 100) {
+                if (deltaX < -100 && currentIndex < sections.length - 1) {
+                    showSection(sections[currentIndex + 1]);
+                }
+                
+                if (deltaX > 100 && currentIndex > 0) {
+                    showSection(sections[currentIndex - 1]);
+                }
             }
         }
 
